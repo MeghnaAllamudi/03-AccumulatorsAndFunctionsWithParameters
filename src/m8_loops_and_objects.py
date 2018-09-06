@@ -6,16 +6,24 @@ This module demonstrates simple LOOPS of the form:
 and also USING OBJECTS.
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Meghna Allamudi.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-
+    print_sequence1()
+    draw_circles1()
+    print_sequence2()
+    draw_circles2()
+    print_sequence3()
+    draw_circles3()
+    print_cosines()
+    draw_cosines_and_sines()
 
 def print_sequence1():
     """
@@ -28,6 +36,7 @@ def print_sequence1():
        ...
        200
     """
+
     # ------------------------------------------------------------------
     # TODO: 2. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
@@ -38,6 +47,9 @@ def print_sequence1():
     print('Running print_sequence1:')
     print('--------------------------------------------------')
 
+
+    for k in range(21):
+        print(k * 10)
 
 def draw_circles1():
     """
@@ -58,6 +70,15 @@ def draw_circles1():
     print('Running draw_circles1:  See graphics window')
     print('--------------------------------------------------')
 
+    window = rg.RoseWindow(400,400)
+    for k in range(1,21):
+        radius = k*10
+        center_point = rg.Point(200, 200)
+        circle = rg.Circle(center_point,radius)
+
+        circle.attach_to(window)
+        window.render()
+    window.close_on_mouse_click()
 
 def print_sequence2():
     """
@@ -80,6 +101,10 @@ def print_sequence2():
     print('Running print_sequence2:')
     print('--------------------------------------------------')
 
+    for k in range(18):
+        print(50+(20*k))
+
+
 
 def draw_circles2():
     """
@@ -100,6 +125,17 @@ def draw_circles2():
     print('--------------------------------------------------')
     print('Running draw_circles2:  See graphics window')
     print('--------------------------------------------------')
+
+    window = rg.RoseWindow(400,400)
+
+    for k in range(18):
+        center_point = rg.Point(50+(20*k),100)
+        circle = rg.Circle(center_point,10)
+        circle.fill_color = 'blue'
+        circle.attach_to(window)
+
+        window.render()
+    window.close_on_mouse_click()
 
 
 def print_sequence3():
@@ -122,6 +158,8 @@ def print_sequence3():
     print('Running print_sequence3:')
     print('--------------------------------------------------')
 
+    for k in range(1,100):
+        print(k)
 
 def draw_circles3():
     """
@@ -140,6 +178,15 @@ def draw_circles3():
     print('--------------------------------------------------')
     print('Running draw_circles3:  See graphics window')
     print('--------------------------------------------------')
+
+    window = rg.RoseWindow(300,300)
+    for k in range(1,100):
+        center_point = rg.Point(200,150)
+        circle = rg.Circle(center_point,k)
+        circle.attach_to(window)
+        window.render()
+    window.close_on_mouse_click()
+
 
 
 def print_cosines():
@@ -177,6 +224,9 @@ def print_cosines():
     print('Running print_cosines:')
     print('--------------------------------------------------')
 
+    for k in range(101):
+        print(80.0*math.cos(k))
+
 
 def draw_cosines_and_sines():
     """
@@ -201,6 +251,18 @@ def draw_cosines_and_sines():
     print('--------------------------------------------------')
     print('Running draw_cosines_and_sines:  See graphics window')
     print('--------------------------------------------------')
+
+    window = rg.RoseWindow(400,400)
+    for k in range(101):
+        i = 80*math.cos(k)
+        j = 80*math.sin(k)
+        center_point = rg.Point(200+i,200+j)
+        circle = rg.Circle(center_point,10)
+        circle.attach_to(window)
+
+    window.render()
+    window.close_on_mouse_click()
+
 
 
 # ----------------------------------------------------------------------
