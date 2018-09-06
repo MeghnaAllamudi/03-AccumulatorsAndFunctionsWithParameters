@@ -4,10 +4,10 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and MeghnaAllamudi.
+         their colleagues and Meghna Allamudi.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
-
+import math
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_cosines()
@@ -29,6 +29,25 @@ def run_test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
 
+    # Test 1
+    expected = 0.13416
+    answer = sum_cosines(3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2
+
+    expected = 1.5403
+    answer = sum_cosines(1)
+    print('Test 2 expected ', expected)
+    print('     actual:  ', answer)
+
+    # Test 3
+
+    expected = 1.124
+    answer = sum_cosines(2)
+    print('Test 3 expected ', expected)
+    print('     actual:  ', answer)
 
 def sum_cosines(n):
     """
@@ -40,6 +59,10 @@ def sum_cosines(n):
       If n is 3, this function returns
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
+    total = 0
+    for k in range(n+1):
+        total = total + math.cos(k)
+    return total
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -65,6 +88,25 @@ def run_test_sum_square_roots():
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
 
+    # Test 1
+    expected = 11.854
+    answer = sum_square_roots(5)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2
+
+    expected = 1.414
+    answer = sum_square_roots(1)
+    print('Test 3 expected ', expected)
+    print('     actual:  ', answer)
+
+    # Test 3
+
+    expected = 3.414
+    answer = sum_square_roots(2)
+    print('Test 3 expected ', expected)
+    print('     actual:  ', answer)
 
 def sum_square_roots(n):
     """
@@ -79,6 +121,11 @@ def sum_square_roots(n):
          sqrt(2) + sqrt(4) + sqrt(6) + sqrt(8) + sqrt(10),
       which is about 11.854408.
     """
+    total = 0
+    for k in range(n):
+        total = total + math.sqrt(2*(k+1))
+
+    return total
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
