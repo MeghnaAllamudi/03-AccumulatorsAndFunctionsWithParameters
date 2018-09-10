@@ -17,7 +17,7 @@ Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
 #     a. For the RoseGraphics coordinate system:
 #
 #        -- Where is the (0, 0) point on the screen?
-#           Top right corner.
+#           Top left corner.
 #
 #
 #        -- In what direction on the screen

@@ -15,6 +15,8 @@ def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
     two_circles()
+    circle_and_rectangle()
+    lines()
 
 def two_circles():
     """
@@ -33,16 +35,17 @@ def two_circles():
     # Put a statement in   main   to test this function
     #    (by calling this function).
     # ------------------------------------------------------------------
-
-    window = rg.RoseWindow()
+    window = rg.RoseWindow(400,400)
     center_point = rg.Point(100,100)
     circle = rg.Circle(center_point,10)
     circle.fill_color = 'blue'
     circle.attach_to(window)
 
-    center_point1 = rg.Point(50,50)
-    circle1 - rg.Circle(center_point1,20)
-    circle1.attach_to(window)
+    center_pointa = rg.Point(50,50)
+    circlea = rg.Circle(center_pointa,20)
+    circlea.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
 
 def circle_and_rectangle():
     """
@@ -85,6 +88,35 @@ def circle_and_rectangle():
     #       instance variables for outline thickness, etc.
     # ------------------------------------------------------------------
 
+    window = rg.RoseWindow(400,400)
+    center_point = rg.Point(200,200)
+    circle = rg.Circle(center_point,10)
+    circle.fill_color = 'blue'
+    circle.attach_to(window)
+
+    point1 = rg.Point(100, 150)
+    point2 = rg.Point(200, 50)
+    center = rg.Point(100,50)
+    rectangle = rg.Rectangle(point1, point2)
+    rectangle.attach_to(window)
+
+    window.render()
+
+    print('The thicknes is 1')
+    print('The color is blue')
+    print('The center is at Point ',center_point)
+    print('The x-coordinate is 200')
+    print('The y-coordinate is 200')
+
+    print('The thicknes is 1')
+    print('The shape is not colored')
+    print('The center is at Point ',center)
+    print('The x-coordinate is 100')
+    print('The y-coordinate is 50')
+
+    window.close_on_mouse_click()
+
+
 def lines():
     """
     -- Constructs a rg.RoseWindow.
@@ -108,6 +140,20 @@ def lines():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # TODO: 4. Implement and test this function.
+
+    window = rg.RoseWindow(400,400)
+    point1 = rg.Point(0,0)
+    point2 = rg.Point(100,100)
+    point3 = rg.Point(100,50)
+    line1 = rg.Line(point1,point2)
+    line2 = rg.Line(point1,point3)
+    line1.attach_to(window)
+    line2.attach_to(window)
+    window.render()
+    print(line1.get_midpoint())
+    print(line2.get_midpoint())
+    window.close_on_mouse_click()
+
 
 
 # ----------------------------------------------------------------------
