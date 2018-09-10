@@ -48,7 +48,7 @@ def two_circles():
     window.close_on_mouse_click()
 
 def circle_and_rectangle():
-    """
+    """ 
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
        on the window such that:
